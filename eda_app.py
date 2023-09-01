@@ -14,7 +14,7 @@ def run_eda_app():
     iris_df = pd.read_csv("data/Iris.csv")
 
     # 메뉴지정
-    submenu = st.sidbar.selectbox("submenu",['통계','시각화','그래프'])
+    submenu = st.sidebar.selectbox("submenu",['통계','시각화','그래프'])
     if submenu == "통계":
         st.subheader("통계")
     elif submenu == "시각화":
