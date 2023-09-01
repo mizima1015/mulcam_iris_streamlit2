@@ -13,7 +13,7 @@ def run_eda_app():
     st.subheader("탐색적 자료 분석 페이지")
     st.subheader("잘 진행중임...!")
 
-    iris_df = pd.read_csv("data/iris.csv")
+    iris_df = pd.read_csv("data/Iris.csv")
 
     # 메뉴지정
     submenu = st.sidebar.selectbox("submenu", ['통계', '시각화', '그래프'])
