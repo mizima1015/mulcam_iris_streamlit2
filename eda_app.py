@@ -1,30 +1,33 @@
-# -*- coding:utf-8 -*-
+# -*- coding:utf-8 -*- 
 
-import streamlit as st
-import pandas as pd
-import matplotlib.pyplot as plt
-import plotly.express as px
-import seaborn as sns
+import streamlit as st 
+import pandas as pd 
+
+import matplotlib.pyplot as plt 
+import plotly.express as px 
+import seaborn as sns 
+
 
 def run_eda_app():
 
     st.subheader("탐색적 자료 분석 페이지")
     st.subheader("잘 진행중임...!")
 
-    iris_df = pd.read_csv("data/Iris.csv")
+    iris_df = pd.read_csv("data/iris.csv")
 
     # 메뉴지정
-    submenu = st.sidebar.selectbox("submenu",['통계','시각화','그래프'])
+    submenu = st.sidebar.selectbox("submenu", ['통계', '시각화', '그래프'])
     if submenu == "통계":
         st.subheader("통계")
+        st.dataframe(iris_df)
     elif submenu == "시각화":
         st.subheader("시각화")
-        fig1 = px.scatter(iris_df,
-                          x = 'sepal_zidth',
-                          y = 'sepal_length',
-                          color = 'species',
-                          size = 'petal_width',
-                          hover_data = ['petal_length'],
+        fig1 = px.scatter(iris_df, 
+                          x = 'Sepal_Width', 
+                          y = 'Sepal_Length', 
+                          color = 'species', 
+                          size = 'Petal_Width', 
+                          hover_data = ['Petal_Length'], 
                           title = "Scatter Plot")
         st.plotly_chart(fig1)
     elif submenu == "그래프":
@@ -32,4 +35,4 @@ def run_eda_app():
     else:
         pass
 
-    st.dataframe(iris_df)
+    
