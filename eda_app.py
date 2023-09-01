@@ -19,6 +19,14 @@ def run_eda_app():
         st.subheader("통계")
     elif submenu == "시각화":
         st.subheader("시각화")
+        fig1 = px.scatter(iris_df,
+                          x = 'sepal_zidth',
+                          y = 'sepal_length',
+                          color = 'species',
+                          size = 'petal_width',
+                          hover_data = ['petal_length'],
+                          title = "Scatter Plot")
+        st.plotly_chart(fig1)
     elif submenu == "그래프":
         st.subheader("그래프")
     else:
